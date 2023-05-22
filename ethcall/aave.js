@@ -1,6 +1,6 @@
 import { EtherscanProvider } from 'ethers';
 import { Contract, Provider } from 'ethcall';
-import { ETHERSCAN_API_KEY } from '../secretEnv';
+import { ETHERSCAN_API_KEY } from '../secretEnv.js';
 import poolAbi from '../abi/aaveV2Pool.json' assert { type: 'json' };
 
 async function run(){

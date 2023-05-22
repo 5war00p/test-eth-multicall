@@ -1,12 +1,12 @@
-import { EtherscanProvider } from 'ethers';
+import { getDefaultProvider } from 'ethers';
 
 import { Contract, Provider } from 'ethcall';
 
 import erc20Abi from '../abi/erc20.json' assert { type: 'json' };
-import { ETHERSCAN_API_KEY } from '../secretEnv';
+import { ETHERSCAN_API_KEY } from '../secretEnv.js';
 
 const run = async () => {
-  const provider = new EtherscanProvider('mainnet', ETHERSCAN_API_KEY);
+  const provider = getDefaultProvider('mainnet', { etherscan: ETHERSCAN_API_KEY });
   const ethcallProvider = new Provider(1, provider);
 
   const daiAddress = '0x6B175474E89094C44Da98b954EedeAC495271d0F';

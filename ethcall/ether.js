@@ -1,9 +1,9 @@
-import { EtherscanProvider } from 'ethers';
+import { getDefaultProvider } from 'ethers';
 import { Provider } from 'ethcall';
-import { ETHERSCAN_API_KEY } from '../secretEnv';
+import { ETHERSCAN_API_KEY } from '../secretEnv.js';
 
 const run = async () => {
-  const provider = new EtherscanProvider('mainnet', ETHERSCAN_API_KEY);
+  const provider = getDefaultProvider('mainnet', { etherscan: ETHERSCAN_API_KEY});
   const ethcallProvider = new Provider(1, provider);
 
   const accounts = [
